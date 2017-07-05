@@ -1,0 +1,44 @@
+ [{
+     "Value": "initialMarginReceived",
+     "DisplayName": "Initial Margin Received",
+     "optional": false
+   },
+
+
+
+   {
+     "Value": "interconnectionPoint",
+     "DisplayName": "Inter Connection Point",
+     "optional": false
+   },
+   {
+     "Value": "contractType",
+     "DisplayName": "Contract Type - JK",
+     "optional": true
+   },
+   {
+     "Value": "indexFactor",
+     "DisplayName": "Index Factor",
+     "optional": true
+   },
+   {
+     "Value": "confirmationTimestamp",
+     "DisplayName": "Confirmation Timestamp",
+     "optional": true
+   },
+   {
+     "Value": "contractType",
+     "DisplayName": "Contract Type",
+     "optional": true
+   },
+   {
+     "Value": "reportingTimestamp",
+     "DisplayName": "Reporting Timestamp",
+     "optional": true
+   },
+   {
+     "Value": "detachmentPoint",
+     "DisplayName": "Detachment Point",
+     "optional": true
+   }
+ ]

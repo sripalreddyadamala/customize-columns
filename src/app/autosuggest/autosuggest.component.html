@@ -1,0 +1,45 @@
+﻿<form class="form-horizontal" [formGroup]="searchForm">
+  <div class="row">
+
+    <div class="col-lg-4"> Date Picker
+      <p-calendar formControlName="dateValue" readonlyInput="readonlyInput" showTime="showTime" (onSelect)="selectedDate($event)">
+      </p-calendar>
+      <div>{{searchForm.get('dateValue').value}}</div>
+    </div>
+    <div class="col-lg-4">
+      Unique Trade/Swap ID
+      <p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)" formControlName="searchTerm"></p-autoComplete>
+      <span class="help-block">
+
+          <span *ngFor="let item of ErrorMessages">
+            <div *ngIf="item">{{item}} </div>
+          </span>
+
+      </span>
+    </div>
+    <div class="col-lg-4">
+      Execution Venue
+      <p-autoComplete [(ngModel)]="textExecutionVenue" [suggestions]="results" (completeMethod)="searchExecutionVenue($event)"
+        formControlName="executionVenue"></p-autoComplete>
+      <span class="help-block">
+
+          <span *ngFor="let item of ErrorMessagesExecutionVenue">
+            <div *ngIf="item">{{item}} </div>
+          </span>
+
+      </span>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-lg-12">
+      <div *ngFor="let item of OptionalColumns">
+        <p-checkbox (onChange)="addToShowColumns(item,$event)"> </p-checkbox>{{item.DisplayName}}
+      </div>
+
+      <p-dataTable #dt [value]="subData">
+        <p-column *ngFor="let item of DefaultColumns" [field]="item.Value" [header]="item.DisplayName"></p-column>
+      </p-dataTable>
+    </div>
+  </div>
+</form>
